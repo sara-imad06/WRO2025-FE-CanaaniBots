@@ -5,7 +5,7 @@ The robot consists of a wide variety of sensors, motors, and two processing unit
 
 ## List of components
 We installed a lot of sensors and other components on the car, here is a list of each of them with a link and some additional notes:
-- **Base car** [4WD RC Smart Car Robot Chassis](https://technolab.ps/detail/471))
+- **Base car** [4WD RC Smart Car Robot Chassis](https://technolab.ps/detail/471)
   - originally 248 x 146 mm, 960 g 695.7 g (including DC and servo motor)
 - **Steering servo** [MG996R Metal Servo Bearing Kit]
 - **DC motor** [DC Gear Motor with Encoder](https://roboticx.ps/product/dc-gear-motor-with-encoder/)
