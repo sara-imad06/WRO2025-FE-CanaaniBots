@@ -10,42 +10,30 @@ We installed a lot of sensors and other components on the car, here is a list of
 - **Steering servo** [MG996R Metal Servo Bearing Kit](https://technolab.ps/detail/471)
 - **DC motor** [DC Gear Motor with Encoder](https://roboticx.ps/product/dc-gear-motor-with-encoder/)
   -  Operating voltage 6V, torque 10 kg*cm max power 3.2A, 210 RPM, 341.2 pulse-per-revolution encoder
-- **Single Board Computer** [Raspberry Pi 5 4GB](https://www.raspberrypi.com/products/raspberry-pi-5/?variant=raspberry-pi-5-4gb)
+- **Single Board Computer** [Raspberry Pi 5 8GB]([https://www.raspberrypi.com/products/raspberry-pi-5/?variant=raspberry-pi-5-4gb](https://roboticx.ps/product/raspberry-pi-5/?asp_highlight=raspberry&p_asid=3))
   - Operating voltage 5V/5A USB-C, 4 USB ports, 40 pins
-- **Microcontroller (ESP)** [NodeMCU-32S](https://www.hestore.hu/prod_10037961.html)
-  - Operating voltage 5V, 2*19 pins, dimensions: 49.5 x 26 mm
-- **Motor driver** [L298N-MOD](https://www.hestore.hu/prod_10036621.html)
-  - Output 2*5A max
+- **Microcontroller Arduino Mega 2560** [arduino]([https://www.hestore.hu/prod_10037961.html](https://roboticx.ps/product/arduino-mega-2560-r3-china/))
+  - Operating voltage 7-12V, 54 Digital I/O Pins (14 PWM outputs)- 16 Analog Inputs, dimensions: 101.5 x 53.3 mm
+- **Motor driver** [L298N]([https://www.hestore.hu/prod_10036621.html](https://roboticx.ps/product/dual-motor-controller-module-l298n/))
+  - Max Drive current 2A
+  - The logic control voltage 4.5~5.5V
 - **Battery**
   - Bundled with car, 11.1V, 6000mAh, lithium
-- **Display and buttons panel** [Led&Key](https://www.hestore.hu/prod_10042203.html)
-  - 8 seven segment displays, buttons, LEDs
-- **Active buzzer** [Z2 buzzer (KPI-G2330E)](https://www.hestore.hu/prod_10029469.html)
-  - Operating voltage 3-24V DC, 3700 Hz, 83 dB, dimensions ⌀23x10mm
-- **Power switch** [ST 1/BK (MRS-1)](https://www.hestore.hu/prod_10023322.html)
-  - Dimensions 19.3x12.9mm
+- **Power switch** [SPST]([https://www.hestore.hu/prod_10023322.html](https://roboticx.ps/product/rocker-switch-on-off-spst/))
 - **LiDAR sensor** [LDROBOT D500 LiDAR Kit](https://www.elektor.com/products/ldrobot-d500-lidar-kit-360-degree-laser-range-scanner-12-m)
   - Dimensions 38.6 x 38.6 x 34.8 mm, range 0.02-12 m, frequency 5-13 Hz, accuracy ±45 mm
+-  **Laser sensor x2 ** [VL53L0XV2 Laser]([https://www.elektor.com/products/ldrobot-d500-lidar-kit-360-degree-laser-range-scanner-12-m](https://roboticx.ps/product/vl53l0xv2-laser-ranging-sensor-time-of-flight-tof/))
+  - Dimensions 25 x 10 x 4 mm, 50mm – 1.2m range (default mode), 50mm – 2.2m range (long range mode), frequency 5-33 Hz, accuracy ±2cm ,3.3V
 - **Camera** [PixyCam 2.1](https://tribotix.com/product/pixycam2-1/)
   - Built-in color detection algorithm, field of View: 80° horizontal 40° vertical, integrated lights, up to 60 fps
-- **Balls bearings**
-  - 4 x 5 mm diameter and 1 x 6 mm diameter
-- **USB-TTL bridge** [CH341T-V3-M](https://www.hestore.hu/prod_10044421.html)
-  - supports both 3.3V and 5V, enables us to use another serial port on the Pi for UART communication
-- **Metal Technic Parts** [axel shaft CONNECTOR](https://metal-technic-parts.com/products/technic-aluminium-metal-axle-shaft-connector-coupling-joiner)
-  - uses screws to attach to the axles, we used it as a fixed-spacer
-- [**Carbon fiber Lego technic axle**](https://joooooy.com/products/moc-carbon-fiber-technic-axle-4519-3705-32073-3706)
-  - can be cut to size, heavy-duty, won't bend as easily
+
 ## Assembly
 The base of our robot was the [Ackermann Intelligent Car](https:) 
 
 
 ## Wiring diagrams
 The colored squares represent the cable colors on the robot.
-### ESP microcontroller (NodeMCU) pinout with connections labeled:
-This illustration is most important for the source code, since everything is actually wired through the custom-made board for the ESP.
-![ESP wiring diagram](pinouts_ESP.jpg)
-(ENC-Motor encoder, PI-Raspberry Pi)
+
 ### Custom-made interconnect panel wiring with connections labeled:
 ![Custom-made interconnect panel wiring diagram](pinouts_board.jpg)
 (ENC-Motor encoder)
