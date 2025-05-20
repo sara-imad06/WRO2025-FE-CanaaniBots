@@ -77,5 +77,5 @@ Just like our individual team meetings, these coach sessions helped us stay alig
 
 # Special thanks
 Special thanks to 'Kaksh' for helping us get the components and letting us use the Interface Lab 😊 Your support truly made a difference!
-
+We also extend our heartfelt thanks to Al-Nabali & Al-Faris Co. for their generous financial support and continuous encouragement of our team.
 
