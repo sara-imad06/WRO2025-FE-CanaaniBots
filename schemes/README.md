@@ -10,17 +10,17 @@ We installed a lot of sensors and other components on the car, here is a list of
 - **Steering servo** [MG996R Metal Servo Bearing Kit](https://technolab.ps/detail/471)
 - **DC motor** [DC Gear Motor with Encoder](https://roboticx.ps/product/dc-gear-motor-with-encoder/)
   -  Operating voltage 6V, torque 10 kg*cm max power 3.2A, 210 RPM, 341.2 pulse-per-revolution encoder
-- **Single Board Computer** [Raspberry Pi 5 8GB]([https://www.raspberrypi.com/products/raspberry-pi-5/?variant=raspberry-pi-5-4gb](https://roboticx.ps/product/raspberry-pi-5/?asp_highlight=raspberry&p_asid=3))
+- **Single Board Computer** [Raspberry Pi 5 8GB]([https://www.raspberrypi.com/products/raspberry-pi-5/?variant=raspberry-pi-5-4gb](https://roboticx.ps/product/raspberry-pi-5/?asp_highlight=raspberry&p_asid=3)
   - Operating voltage 5V/5A USB-C, 4 USB ports, 40 pins
-- **Microcontroller Arduino Mega 2560** [arduino]([https://www.hestore.hu/prod_10037961.html](https://roboticx.ps/product/arduino-mega-2560-r3-china/))
+- **Microcontroller Arduino Mega 2560** [arduino](https://www.hestore.hu/prod_10037961.html](https://roboticx.ps/product/arduino-mega-2560-r3-china/))
   - Operating voltage 7-12V, 54 Digital I/O Pins (14 PWM outputs)- 16 Analog Inputs, dimensions: 101.5 x 53.3 mm
 - **Motor driver** [L298N]([https://www.hestore.hu/prod_10036621.html](https://roboticx.ps/product/dual-motor-controller-module-l298n/))
   - Max Drive current 2A
   - The logic control voltage 4.5~5.5V
 - **Battery**
   - Bundled with car, 11.1V, 6000mAh, lithium
-- **Power switch** [SPST]([https://www.hestore.hu/prod_10023322.html](https://roboticx.ps/product/rocker-switch-on-off-spst/))
-- **LiDAR sensor** [TF-Luna]([https://www.elektor.com/products/ldrobot-d500-lidar-kit-360-degree-laser-range-scanner-12-m](https://roboticx.ps/product/tf-luna-tof-micro-single-point-ranging-lidar/))
+- **Power switch** [SPST](https://www.hestore.hu/prod_10023322.html](https://roboticx.ps/product/rocker-switch-on-off-spst/))
+- **LiDAR sensor** [TF-Luna](https://www.elektor.com/products/ldrobot-d500-lidar-kit-360-degree-laser-range-scanner-12-m](https://roboticx.ps/product/tf-luna-tof-micro-single-point-ranging-lidar/))
   - Dimensions 35 x 21.5  mm, range 0.2-8 m, frequency 100 Hz, accuracy ±2% ,FOV 2°
 -  **Laser sensor x2** [VL53L0XV2 Laser]([https://www.elektor.com/products/ldrobot-d500-lidar-kit-360-degree-laser-range-scanner-12-m](https://roboticx.ps/product/vl53l0xv2-laser-ranging-sensor-time-of-flight-tof/))
   - Dimensions 25 x 10 x 4 mm, 50mm – 1.2m range (default mode), 50mm – 2.2m range (long range mode), frequency 5-33 Hz, accuracy ±2cm ,3.3V
