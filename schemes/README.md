@@ -20,9 +20,9 @@ We installed a lot of sensors and other components on the car, here is a list of
 - **Battery**
   - Bundled with car, 11.1V, 6000mAh, lithium
 - **Power switch** [SPST]([https://www.hestore.hu/prod_10023322.html](https://roboticx.ps/product/rocker-switch-on-off-spst/))
-- **LiDAR sensor** [LDROBOT D500 LiDAR Kit](https://www.elektor.com/products/ldrobot-d500-lidar-kit-360-degree-laser-range-scanner-12-m)
-  - Dimensions 38.6 x 38.6 x 34.8 mm, range 0.02-12 m, frequency 5-13 Hz, accuracy ±45 mm
--  **Laser sensor x2 ** [VL53L0XV2 Laser]([https://www.elektor.com/products/ldrobot-d500-lidar-kit-360-degree-laser-range-scanner-12-m](https://roboticx.ps/product/vl53l0xv2-laser-ranging-sensor-time-of-flight-tof/))
+- **LiDAR sensor** [TF-Luna]([https://www.elektor.com/products/ldrobot-d500-lidar-kit-360-degree-laser-range-scanner-12-m](https://roboticx.ps/product/tf-luna-tof-micro-single-point-ranging-lidar/))
+  - Dimensions 35 x 21.5  mm, range 0.2-8 m, frequency 100 Hz, accuracy ±2% ,FOV 2°
+-  **Laser sensor x2** [VL53L0XV2 Laser]([https://www.elektor.com/products/ldrobot-d500-lidar-kit-360-degree-laser-range-scanner-12-m](https://roboticx.ps/product/vl53l0xv2-laser-ranging-sensor-time-of-flight-tof/))
   - Dimensions 25 x 10 x 4 mm, 50mm – 1.2m range (default mode), 50mm – 2.2m range (long range mode), frequency 5-33 Hz, accuracy ±2cm ,3.3V
 - **Camera** [PixyCam 2.1](https://tribotix.com/product/pixycam2-1/)
   - Built-in color detection algorithm, field of View: 80° horizontal 40° vertical, integrated lights, up to 60 fps
