@@ -14,12 +14,12 @@ We installed a lot of sensors and other components on the car, here is a list of
   - Operating voltage 5V/5A USB-C, 4 USB ports, 40 pins
 - **Microcontroller Arduino Mega 2560** [arduino](https://roboticx.ps/product/arduino-mega-2560-r3-china/)
   - Operating voltage 7-12V, 54 Digital I/O Pins (14 PWM outputs)- 16 Analog Inputs, dimensions: 101.5 x 53.3 mm
-- **Motor driver** [L298N]([https://www.hestore.hu/prod_10036621.html](https://roboticx.ps/product/dual-motor-controller-module-l298n/))
+- **Motor driver** [L298N](https://roboticx.ps/product/dual-motor-controller-module-l298n/)
   - Max Drive current 2A
   - The logic control voltage 4.5~5.5V
 - **Battery**
   - Bundled with car, 11.1V, 6000mAh, lithium
-- **Power switch** [SPST](https://www.hestore.hu/prod_10023322.html](https://roboticx.ps/product/rocker-switch-on-off-spst/))
+- **Power switch** [SPST](https://roboticx.ps/product/rocker-switch-on-off-spst/)
 - **LiDAR sensor** [TF-Luna](https://roboticx.ps/product/tf-luna-tof-micro-single-point-ranging-lidar/)
   - Dimensions 35 x 21.5  mm, range 0.2-8 m, frequency 100 Hz, accuracy ±2% ,FOV 2°
 -  **Laser sensor x2** [VL53L0XV2 Laser](https://roboticx.ps/product/vl53l0xv2-laser-ranging-sensor-time-of-flight-tof/)
