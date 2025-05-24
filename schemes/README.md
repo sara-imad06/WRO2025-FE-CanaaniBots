@@ -15,10 +15,9 @@ We installed a lot of sensors and other components on the car, here is a list of
 - **Microcontroller Arduino Mega 2560** [arduino](https://roboticx.ps/product/arduino-mega-2560-r3-china/)
   - Operating voltage 7-12V, 54 Digital I/O Pins (14 PWM outputs)- 16 Analog Inputs, dimensions: 101.5 x 53.3 mm
 - **Motor driver** [L298N](https://roboticx.ps/product/dual-motor-controller-module-l298n/)
-  - Max Drive current 2A
-  - The logic control voltage 4.5~5.5V
+  - Max Drive current 2A, control voltage 4.5~5.5V
 - **Battery**
-  - Bundled with car, 11.1V, 6000mAh, lithium
+  - Bundled with car, 4.2V, 5000mAh,Lithium, [Lithium Ion Battery](https://roboticx.ps/product/lithium-ion-battery-18650-cell-5000mah/)
 - **Power switch** [SPST](https://roboticx.ps/product/rocker-switch-on-off-spst/)
 - **LiDAR sensor** [TF-Luna](https://roboticx.ps/product/tf-luna-tof-micro-single-point-ranging-lidar/)
   - Dimensions 35 x 21.5  mm, range 0.2-8 m, frequency 100 Hz, accuracy ±2% ,FOV 2°
@@ -28,7 +27,7 @@ We installed a lot of sensors and other components on the car, here is a list of
   - Built-in color detection algorithm, field of View: 80° horizontal 40° vertical, integrated lights, up to 60 fps
 
 ## Assembly
-The base of our robot was the [Ackermann Intelligent Car](https:) 
+The base of our robot was the [4WD RC Smart Car Robot Chassis](https://technolab.ps/detail/471)
 
 
 ## Wiring diagrams
