@@ -42,7 +42,8 @@ We 3D printed the parts using PLC material, and we drilled and adjusted them our
 #### 2. Stage two: Designing a movable battery holder (slider)
  
   ![Slider ](/models/Slider.jpg) 
-  <img src="./models/Slider.jpg" alt="Slider" width="50%">
+  <img src="./models/Slider.jpg" alt="Slider" width="200">
+
 
   
 #### Making the models and Exporting the G-code
