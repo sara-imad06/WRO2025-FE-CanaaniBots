@@ -3,5 +3,6 @@ This whole experience felt like a big adventure full of late nights, questions, 
 ## Principles
 - **Be accurate**Be creative
 - **Google it – your smartest teammate:)**
-- **Ask everyone**Distance is your friend ## Ideas
+- **Ask everyone**
+- **Distance is your friend **
   ## Ideas
