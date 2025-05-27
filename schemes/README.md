@@ -36,8 +36,7 @@ The design and 3D printing of the parts went through four main stages based on o
 We 3D printed the parts using PLC material, and we drilled and adjusted them ourselves in the engineering workshops at the university.
  
   <img src="/models/stage_1.png" alt="pen holders" width="700">
-
-
+  
 #### 2. Stage two: Designing a movable battery holder (slider)
  
   <img src="/models/Slider.jpg" alt="Slider" width="700">
