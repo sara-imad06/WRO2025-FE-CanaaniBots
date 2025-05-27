@@ -42,6 +42,8 @@ We 3D printed the parts using PLC material, and we drilled and adjusted them our
 #### 2. Stage two: Designing a movable battery holder (slider)
  
   ![Slider ](/models/Slider.jpg) 
+  <img src="./models/Slider.jpg" alt="Slider" width="50%">
+
   
 #### Making the models and Exporting the G-code
   We used *Autodesk Fusion 360* for designing our parts, however any industrial software like *Autodesk Inventor* can be used as well. In the modelling process there are a couple of things to remember:
