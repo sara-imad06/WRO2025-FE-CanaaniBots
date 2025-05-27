@@ -4,5 +4,5 @@ This whole experience felt like a big adventure full of late nights, questions, 
 - **Be accurate**Be creative
 - **Google it – your smartest teammate:)**
 - **Ask everyone**
-- **Distance is your friend **
+- **Distance is your friend**
   ## Ideas
