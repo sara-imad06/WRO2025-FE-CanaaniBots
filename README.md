@@ -3,14 +3,10 @@
 ### [Ideas and principles](/Ideas_and_principles.md)
 ### [Hardware documentation](/schemes/README.md)
 ### [Software documentation](/src/README.md)
-### [Measurent- The robot's mechanical characteristics](/The%20robot's%20mechanical%20characteristics.md)
 ### [Videos](/video/video.md)
 ### [Team Photos](/t-photos/)
 ### [Vehicle Photos](/v-photos/)
 
-# Our journey
-
-  
 
 ## The team
 From Palestine, we are CanaaniBots — a team of three passionate young engineers and a supportive coach. After a year of competing together in WRO, trying out categories like Innovators and Future Engineers. This year, we're thrilled to return to the Future Engineers challenge once again!
