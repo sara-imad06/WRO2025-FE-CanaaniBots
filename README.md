@@ -57,7 +57,8 @@ At first, our initial design was based on a [pre-made metal frame car](https://t
 The design phases of the robot were diverse and multi-staged, involving the design of new parts tailored to each stage of the robot’s mechanical development. The design was not static; it evolved continuously based on the requirements of each phase. We also conducted accuracy tests for the robot at each step, according to the strategy we had previously established, to ensure the desired performance and guide adjustments effectively.
 
 All of these stages and modifications were documented in detail in the Hardware Documentation, serving as a clear and comprehensive reference for our work.
-                           ![pre-made metal frame car](image.png)
+
+  ![pre-made metal frame car](image.png)
   
 
 
