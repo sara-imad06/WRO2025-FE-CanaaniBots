@@ -53,9 +53,9 @@ Designing our robot was more than just building hardware—it was a full-on engi
 
 ## Our first design
 At first, our initial design was based on a [pre-made metal frame car](https://technolab.ps/detail/471), which included a metal base plate, two additional smaller base parts, a steering system, and four good-quality wheels. We did not rely on the original frame as it was; the main goal of using it was to speed up the design process. We modified it directly using custom parts that we designed and 3D printed, in order to implement the plan we had in mind more accurately and in a way that meets the project’s requirements.
-  ![pre-made metal frame car](image.png)
 The design phases of the robot were diverse and multi-staged, involving the design of new parts tailored to each stage of the robot’s mechanical development. The design was not static; it evolved continuously based on the requirements of each phase. We also conducted accuracy tests for the robot at each step, according to the strategy we had previously established, to ensure the desired performance and guide adjustments effectively.
 All of these stages and modifications were documented in detail in the Hardware Documentation, serving as a clear and comprehensive reference for our work.
+ ![pre-made metal frame car](image.png)
   
 
 
