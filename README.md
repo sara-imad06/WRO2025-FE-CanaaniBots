@@ -1,6 +1,6 @@
 # 📄 Table of contents
 ### [Our journey](#our-journey)
-### [Our plan and Strategy](/Our plan and Strategy.md)
+### [Our plan and Strategy](/our_plan_and_strategy.md)
 ### [Hardware documentation](/schemes/README.md)
 ### [Software documentation](/src/README.md)
 ### [Videos](/video/video.md)
