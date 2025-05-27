@@ -36,7 +36,9 @@ The design and 3D printing of the parts went through four main stages based on o
   In this stage, we designed two planned parts (Front pen holder & Rear pen holder) to hold two pens, aiming to verify the robot’s correct movement and to detect any deviation in the servo motor’s motion in order to program it accurately. The first part is fixed at the front of the robot, and the second at its end, precisely at the center, to measure the accuracy of the path and the amount of deviation.
 We 3D printed the parts using PLC material, and we drilled and adjusted them ourselves in the engineering workshops at the university.
  
-  ![pen holders ](/models/stage_1.png) ![Front Pin Holder](/models/Front Pin Holder ISO.png) ![Rear Pin Holder ISO](/models/Rear Pin Holder ISO.png)
+  ![pen holders ](/models/stage_1.png) 
+  ![Front Pin Holder](/models/Front Pin Holder ISO) 
+  ![Rear Pin Holder ISO](/models/Rear Pin Holder ISO)
 
 #### 2. Stage two: Designing a movable battery holder (slider)
  
