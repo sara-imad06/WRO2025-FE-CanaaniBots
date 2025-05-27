@@ -30,12 +30,12 @@ We installed a lot of sensors and other components on the car, here is a list of
 
 The design and 3D printing of the parts went through four main stages based on our mechanical strategy:
 
----
 #### 1. Stage one: Printing parts to verify the robot’s ability to move in a straight linear path without deviation.
   
   In this stage, we designed two planned parts (Front pen holder & Rear pen holder) to hold two pens, aiming to verify the robot’s correct movement and to detect any deviation in the servo motor’s motion in order to program it accurately. The first part is fixed at the front of the robot, and the second at its end, precisely at the center, to measure the accuracy of the path and the amount of deviation.
 We 3D printed the parts using PLC material, and we drilled and adjusted them ourselves in the engineering workshops at the university.
  
+  ![pen holders ](/models/stage_1.png) 
   ![pen holders ](/models/stage_1.png) 
 
 #### 2. Stage two: Designing a movable battery holder (slider)
