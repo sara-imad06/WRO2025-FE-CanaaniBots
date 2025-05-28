@@ -44,22 +44,14 @@ We 3D printed the parts using PLC material, and we drilled and adjusted them our
 
   
 #### Making the models and Exporting the G-code
-  We used *Autodesk Fusion 360* for designing our parts, however any industrial software like *Autodesk Inventor* can be used as well. In the modelling process there are a couple of things to remember:
   
-  - Make sure that any measurement given in a documentation seems realistic, **since we have seen mistakes even in official documentations**.
-  - Always double check any calculation and check the dimensions relative to multiple sides, because **it may look alright from one side, but may be completely unusable from another**.
-  - Use your software's built in physics simulators to check for weak points and **always make sure it can handle the stress it may be placed under**.
-  - When done export the file as an **.stl** so that a slicer can use it.
-  
-  
-  ![Example of a sketch in Fusion 360](/models/fusion_sketch.png)
   
 
 
 
 
 ## Assembly
-First we started from the base car kit, which is the HiWonder Ackermann Intelligent Car. 
+First we started from the base car kit,
 
 
 
