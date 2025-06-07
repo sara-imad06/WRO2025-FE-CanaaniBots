@@ -39,6 +39,7 @@ Familiarity with various sensors, including gyroscope and ultrasonic sensors, as
 ## What the Robot Taught Us
 Designing our robot was more than just building hardware—it was a full-on engineering adventure. Every challenge we faced pushed us to learn new tools, experiment with ideas, and grow as a team. From the first sketch to the final test run, the journey was packed with hands-on learning and exciting discoveries, Here are some of the key skills and experiences we gained:
   - Gained experience in mechanical design (learned how to use SolidWorks to design a functional mechanical differential) and prototyping using 3D modeling tools
+  - We learned how to design electronic components using Fritzing
   - Explored and implemented advanced steering and turning systems
   - Integrated and calibrated various sensors to ensure accurate and stable robot behavior
   - Practiced debugging techniques and iterative testing to refine performance
