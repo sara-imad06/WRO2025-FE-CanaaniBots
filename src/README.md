@@ -41,7 +41,7 @@ If you successfully install the libraries but still receive a module not found e
 At this stage, we developed an experimental code based on the basic wiring, with the main goal of testing all wheels, motors, and controllers. This stage was divided into three main parts:
 
 ### 1. Adjusting the servo motor angle
-During this process, the center angle was set to 90 degrees, with a deviation range of ±10 degrees [servo_test_code](\WRO2025-FE-CanaaniBots\src\servo_test_code.java) [wiring_1](\WRO2025-FE-CanaaniBots\src\wiring_1.fzz).
+During this process, the center angle was set to 90 degrees, with a deviation range of ±10 degrees [servo_test_code](\src\servo_test_code.java) [wiring_1](\src\wiring_1.fzz).
 
   ![Stage 1](wiring_1.png)
 
@@ -67,6 +67,7 @@ ________________________________________
  Note : Servo motors need a separate power supply if they draw significant current. Always connect the grounds together (Arduino GND and power source GND).
 
  #### Classes
+ <br>
 `DCMotor`<br>
  to control the motor speed and direction.
 
@@ -78,7 +79,7 @@ is currently empty — to add automatic or manual control later.
 
 
 ### 2. Working on it simultaneously with the mechanical aspect
-The DC motor runs continuously forward, while the servo automatically turns every 5 seconds in a loop: Left → Center → Right → repeat.[Servo test code](\WRO2025-FE-CanaaniBots\src\servo_test_code.java) [Wiring diagram](\WRO2025-FE-CanaaniBots\src\test_1_wiring.fzz).
+The DC motor runs continuously forward, while the servo automatically turns every 5 seconds in a loop: Left → Center → Right → repeat.[Servo test code](\src\servo_test_code.java) [Wiring diagram](\src\test_1_wiring.fzz).
 
   ![wiring](test_1_wiring.png)
 
@@ -147,13 +148,3 @@ Repeatedly changes the steering direction every 5 seconds and prints the current
 ## Framework - functions
 
 
-
-
-
-
-
-====
-
-This directory must contain code for control software which is used by the vehicle to participate in the competition and which was developed by the participants.
-
-All artifacts required to resolve dependencies and build the project must be included in this directory as well.
