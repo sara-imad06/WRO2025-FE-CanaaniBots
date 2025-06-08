@@ -35,13 +35,11 @@ The Raspberry Pi 5 should have Raspberry Pi OS 64 bit downloaded. You will need 
 - `pip install rpi-TM1638`
   - [TMBoard](https://thilaire.github.io/missionBoard/TM163x/) panel library
   
-If you successfully install the libraries but still receive a module not found error try replacing the `pip` keyword with `pip3` or `pip3.12`.
-
 ## Testing Code (Stage 1)
 At this stage, we developed an experimental code based on the basic wiring, with the main goal of testing all wheels, motors, and controllers. This stage was divided into three main parts:
 
 ### 1. Adjusting the servo motor angle
-During this process, the center angle was set to 90 degrees, with a deviation range of ±10 degrees [servo_test_code](\src\servo_test_code.java) [wiring_1](\src\wiring_1.fzz).
+During this process, the center angle was set to 90 degrees, with a deviation range of ±10 degrees [Code](/src/servo_test_code.java) & [Wiring](/sr/wiring_1.fzz).
 
   ![Stage 1](wiring_1.png)
 
@@ -79,7 +77,7 @@ is currently empty — to add automatic or manual control later.
 
 
 ### 2. Working on it simultaneously with the mechanical aspect
-The DC motor runs continuously forward, while the servo automatically turns every 5 seconds in a loop: Left → Center → Right → repeat.[Servo test code](\src\servo_test_code.java) [Wiring diagram](\src\test_1_wiring.fzz).
+The DC motor runs continuously forward, while the servo automatically turns every 5 seconds in a loop: Left → Center → Right → repeat.[Code](/src/test.java) & [Wiring diagram](/src/test_1_wiring.fzz).
 
   ![wiring](test_1_wiring.png)
 
@@ -129,7 +127,7 @@ Initializes motor and servo pins, starts forward movement, centers the servo, an
 Repeatedly changes the steering direction every 5 seconds and prints the current state to the Serial Monitor with center angle = 90 , Max to Right = 125, Max to Left = 55.
 
 
-
+### 3. 
 
 ## Open challenge
 ## Obstacle challenge
