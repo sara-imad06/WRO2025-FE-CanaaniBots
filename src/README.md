@@ -116,8 +116,8 @@ Purpose	Pin
 - DC Motor IN1	Pin 4
 - DC Motor IN2	Pin 5
 - Servo Signal	Pin 9
-- Encoder A	Pin 18 (optional)
-- Encoder B	Pin 19 (optional)
+- Encoder A	Pin 18 
+- Encoder B	Pin 19 
 
 #### Functions
 `setup()`<br>
