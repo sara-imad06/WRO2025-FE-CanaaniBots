@@ -14,16 +14,16 @@ From Palestine, we are CanaaniBots — a team of three passionate young engineer
 
 >Members
 
-- **Sara Abdou** from [Birzeit University](https://www.birzeit.edu/en) - Department of Electrical and Computer Engineering
+- **Sara Abdou** from [Birzeit University](https://www.birzeit.edu/en) - Department of Electrical and Computer Engineering, Birzeit UNI
   - imadsara117@gmail.com
-- **Rama Najjar** from [Birzeit University](https://www.birzeit.edu/en) - Department of Mechanical and Mechatronics Engineering
+- **Rama Najjar** from [Birzeit University](https://www.birzeit.edu/en) - Department of Mechanical and Mechatronics Engineering, Birzeit UNI
   - ramanajjar25@gmail.com
-- **Sadeel Taleeb** from [Birzeit University](https://www.birzeit.edu/en) - Department of Electrical and Computer Engineering
+- **Sadeel Taleeb** from [Birzeit University](https://www.birzeit.edu/en) - Department of Electrical and Computer Engineering, Birzeit UNI
   - sadeeltaleeb4@gmail.com
 
 >Coach
 
-- **Eng. Ahmad AbuBaker** - TA at the Mechanical Engineering Department
+- **Eng. Ahmad AbuBaker** - TA at the Mechanical & Mechatronics Engineering Department, Birzeit UNI 
   - ahmadabubaker199@gmail.com
 
 ## Past experiences
