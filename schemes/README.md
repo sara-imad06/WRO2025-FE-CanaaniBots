@@ -44,7 +44,7 @@ We 3D printed the parts using PLC material, and we drilled and adjusted them our
 
 
   
-#### Making the models and Exporting the G-code
+#### Making the models and Exporting the .stl files
   
   
 
