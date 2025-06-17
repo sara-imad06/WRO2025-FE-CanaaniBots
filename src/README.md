@@ -15,6 +15,10 @@ The different communication protocols used between the components of the robot a
       - LiDAR ` `
     - Camera `USB`
 
+## Components and Connections Simulation
+We designed and modified these parts to match the needs of our WRO project, using Fritzing based on our specific requirements. The design process was guided by our strategy of fully simulating all components, connections, and code before implementation. Therefore, creating these parts was an essential step in our plan to ensure a smooth transition from theoretical design to practical application[Parts](https://github.com/sara-imad06/WRO-Designed-Components.git).
+
+
 
 ## Programming computer & Code editor
 This can be either a laptop or a PC. We tested everything on a laptop running Windows 11.We used Visual Studio Code [VScode](https://code.visualstudio.com/download), we used several extinstions like :[Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Ardunio](https://marketplace.visualstudio.com/items?itemName=lintangwisesa.arduino),[Ardunio](https://marketplace.visualstudio.com/items?itemName=moozzyk.Arduino), [Java](https://marketplace.visualstudio.com/items?itemName=SonderMX.java-kits)
