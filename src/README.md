@@ -16,18 +16,7 @@ This can be either a laptop or a PC. We tested everything on a laptop running Wi
 The [Arduino Integrated Development Environment](https://www.arduino.cc/en/software/)  was our choice to develop our first stage (testing code) files were in**file.ino** extinstion. In later stages we moved into VS code.
 
 ## Raspberry Pi 5
-### Setup
-The Raspberry Pi 5 should have Raspberry Pi OS 64 bit downloaded. You will need to install a few Python libraries using the **`pip`** tool. Pip most likely got installed along with Python but just in case it can be downloaded [here](https://pip.pypa.io/en/stable/installation/).
-### Installing libraries
-- `pip install rpi-lgpio`
-  - **GPIO** pin manager library for Raspberry Pi 5
-- `pip install serial`
-  - **Serial** communication library
-- `pip install smbus2`
-  - **I2C** communication library
-- `pip install rpi-TM1638`
-  - [TMBoard](https://thilaire.github.io/missionBoard/TM163x/) panel library
-  
+
 ## Testing Code (Stage 1)
 At this stage, we developed an experimental code based on the basic wiring, with the main goal of testing all wheels, motors, and controllers. This stage was divided into three main parts:
 
