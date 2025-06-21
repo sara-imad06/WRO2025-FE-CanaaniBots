@@ -47,7 +47,7 @@ We encountered several challenges during the assembly and planning process, but 
 
 ## Wiring 
 ### 1. Adjusting the servo motor angle  
-[Wiring](/sr/wiring_1.fzz)
+[Wiring](/schemes/wiring_1.fzz)
 
 ![Stage 1](wiring_1.png)
 
@@ -77,7 +77,7 @@ Note: Servo motors need a separate power supply if they draw significant current
 
 ---
 ### 2. Working on it simultaneously with the mechanical aspect  
-[Wiring diagram](/src/test_1_wiring.fzz)
+[Wiring diagram](/schemes/test_1_wiring.fzz)
 
 ![wiring](test_1_wiring.png)
 
