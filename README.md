@@ -23,7 +23,7 @@ From Palestine, we are CanaaniBots — a team of three passionate young engineer
 
 >Coach
 
-- **Eng. Ahmad AbuBaker** - TA at the Mechanical & Mechatronics Engineering Department, Birzeit UNI 
+- **Eng. Ahmad AbuBaker** - TA at the Mechanical and Mechatronics Engineering Department, Birzeit UNI,[Birzeit University](https://www.birzeit.edu/en/study/academic-departments/mmed)
   - ahmadabubaker199@gmail.com
 
 ## Past experiences

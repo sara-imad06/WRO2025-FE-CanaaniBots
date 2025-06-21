@@ -18,47 +18,117 @@ We installed a lot of sensors and other components on the car, here is a list of
   - Max Drive current 2A, control voltage 4.5~5.5V
 - **Battery**
   - Bundled with car, 4.2V, 5000mAh,Lithium, [Lithium Ion Battery](https://roboticx.ps/product/lithium-ion-battery-18650-cell-5000mah/)
+- **Lithium Battery Charger Module**
+  - Maximum current can be 5A , Output voltage 5V
 - **Power switch** [SPST](https://roboticx.ps/product/rocker-switch-on-off-spst/)
-- **LiDAR sensor** [TF-Luna](https://roboticx.ps/product/tf-luna-tof-micro-single-point-ranging-lidar/)
-  - Dimensions 35 x 21.5  mm, range 0.2-8 m, frequency 100 Hz, accuracy ±2% ,FOV 2°
--  **Laser sensor x2** [VL53L0XV2 Laser](https://roboticx.ps/product/vl53l0xv2-laser-ranging-sensor-time-of-flight-tof/)
+-  **Laser sensor x3** [VL53L0XV2 Laser](https://roboticx.ps/product/vl53l0xv2-laser-ranging-sensor-time-of-flight-tof/)
   - Dimensions 25 x 10 x 4 mm, 50mm – 1.2m range (default mode), 50mm – 2.2m range (long range mode), frequency 5-33 Hz, accuracy ±2cm ,3.3V
-- **Camera** [PixyCam 2.1](https://tribotix.com/product/pixycam2-1/)
-  - Built-in color detection algorithm, field of View: 80° horizontal 40° vertical, integrated lights, up to 60 fps
+- **Camera** [Raspberry Pi Camera Module V2](https://roboticx.ps/product/raspberry-pi-camera-module/?asp_highlight=raspberry&p_asid=3)
+  - No built-in color detection algorithm, field of View: 62.2° horizontal 48.8° vertical, up to 90 fps
 
-## 3D printed parts stages (designing & printing)
+## Design and 3D printing of parts
+All parts were specifically designed for the competition using SolidWorks  and printed on () printers using a slicer. The files were exported in .stl format for 3D printing, and the material used was (), You can view the designs of all parts in SLDASM and SLDPRT formats [here](/models/Solid_Works_3D_Drawings),we drilled and adjusted all the parts ourselves in the engineering workshops at the university.
 
-The design and 3D printing of the parts went through four main stages based on our mechanical strategy:
-
-#### 1. Stage one: Printing parts to verify the robot’s ability to move in a straight linear path without deviation.
+### 1. Stage one: Printing parts to verify the robot’s ability to move in a straight linear path without deviation.
   
   In this stage, we designed two planned parts (Front pen holder & Rear pen holder) to hold two pens, aiming to verify the robot’s correct movement and to detect any deviation in the servo motor’s motion in order to program it accurately. The first part is fixed at the front of the robot, and the second at its end, precisely at the center, to measure the accuracy of the path and the amount of deviation.
-We 3D printed the parts using PLC material, and we drilled and adjusted them ourselves in the engineering workshops at the university.
- 
+
   <img src="/models/stage_1.png" alt="pen holders" width="700">
   
-#### 2. Stage two: Designing a movable battery holder (slider)
+### 2. Stage two: Designing a movable battery holder (slider)
 
- 
   <img src="/models/Slider.jpg" alt="Slider" width="700">
 
-
-  
-#### Making the models and Exporting the .stl files
-  
-  
-
-
+### 3. Stage three:
 
 
 ## Assembly
-First we started from the base car kit,
-
-
-
-
-
-
-
-## Conclusion
 We encountered several challenges during the assembly and planning process, but we are very proud of the work we have accomplished. If you have any questions or encounter any issues, please don't hesitate to contact us at ramanajjar25@gmail.com(Rama) or ahmadabubaker199@gmail.com(Ahmad) through any preferred method.
+
+## Wiring 
+### 1. Adjusting the servo motor angle  
+[Wiring](/sr/wiring_1.fzz)
+
+![Stage 1](wiring_1.png)
+
+#### Wiring details at this stage
+**DC Motor via L298N Module**  
+(Connected to pins 3, 4, and 5)  
+L298N to Arduino Mega:
+- IN1 → Pin 4 (controls motor direction)
+- IN2 → Pin 5 (controls motor direction)
+- ENA → Pin 3 (PWM pin, controls motor speed)
+
+L298N Power:
+- OUT1 & OUT2 → Connect to DC motor wires
+- 12V / VCC → Connect to external power supply (6V–12V battery)
+- GND → Connect to Arduino GND
+- 5V (if jumper is present) → Optional; powers logic (you can use it if your battery is strong enough)
+
+---
+**Servo Motor (Steering)**  
+(Connected to pin 9)  
+Servo Motor to Arduino Mega:
+- Signal (usually orange or yellow) → Pin 9
+- VCC (red) → External 5V–6V power source
+- GND (brown/black) → Connect to common GND with Arduino
+
+Note: Servo motors need a separate power supply if they draw significant current. Always connect the grounds together (Arduino GND and power source GND).
+
+---
+### 2. Working on it simultaneously with the mechanical aspect  
+[Wiring diagram](/src/test_1_wiring.fzz)
+
+![wiring](test_1_wiring.png)
+
+#### Wiring details at this stage
+**L298N Motor Driver to Arduino Mega**
+- OUT1 → Red wire of the DC motor
+- OUT2 → White wire of the DC motor
+- ENA → Pin 3 on Arduino Mega (PWM control)
+- IN1 → Pin 4 on Arduino Mega
+- IN2 → Pin 5 on Arduino Mega
+- GND → GND (to Arduino GND and battery GND)
+- 12V → External power (6V–12V battery)
+
+---
+**DC Motor Encoder**
+- Green (A signal) → Arduino Mega Pin 18 (Interrupt)
+- Yellow (B signal) → Arduino Mega Pin 19 (Interrupt)
+- Blue (VCC) → Arduino 5V
+- Black (GND) → Arduino GND
+
+---
+**Servo Motor to Arduino Mega**
+- Signal (Orange) → Pin 9 on Arduino Mega
+- VCC (Red) → External 5V–6V power source 
+- GND (Brown) → Common GND (Arduino GND + battery GND)
+
+---
+**Power Connections**
+- DC Motor → Powered by external source (6V–12V) through L298N
+- Servo Motor → Separate regulated 5V–6V source (e.g., 2S LiPo with voltage regulator)
+- Arduino Mega → Powered via USB or VIN (7V–12V regulated input)
+
+## Mechanical methods
+## Conclusion
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
