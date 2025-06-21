@@ -26,6 +26,18 @@ We installed a lot of sensors and other components on the car, here is a list of
 - **Camera** [Raspberry Pi Camera Module V2](https://roboticx.ps/product/raspberry-pi-camera-module/?asp_highlight=raspberry&p_asid=3)
   - No built-in color detection algorithm, field of View: 62.2° horizontal 48.8° vertical, up to 90 fps
 
+## Sensors and motors communication protocols
+The different communication protocols used between the components of the robot and their hierarchy:
+- Computer
+  - Raspberry Pi `SSH & VNC & micro-HDMI `
+    - Ardunio Maga `USB `
+      - DC Motor with endcoder `Interrupt`
+      - Motor driver `PWM` 2x`Digital`
+      - Servo `PWM`
+      - 3x VL53L0X Sensor `I2C` + `Digital Output (XSHUT)`
+  - Camera `CSI-2`
+
+
 ## Design and 3D printing of parts
 All parts were specifically designed for the competition using SolidWorks  and printed on () printers using a slicer. The files were exported in .stl format for 3D printing, and the material used was (), You can view the designs of all parts in SLDASM and SLDPRT formats [here](/models/Solid_Works_3D_Drawings),we drilled and adjusted all the parts ourselves in the engineering workshops at the university.
 
@@ -45,7 +57,7 @@ All parts were specifically designed for the competition using SolidWorks  and p
 ## Assembly
 We encountered several challenges during the assembly and planning process, but we are very proud of the work we have accomplished. If you have any questions or encounter any issues, please don't hesitate to contact us at ramanajjar25@gmail.com(Rama) or ahmadabubaker199@gmail.com(Ahmad) through any preferred method.
 
-## Wiring 
+## Wiring diagrams and details
 ### 1. Adjusting the servo motor angle  
 [Wiring](/schemes/wiring_1.fzz)
 
@@ -76,7 +88,7 @@ Servo Motor to Arduino Mega:
 Note: Servo motors need a separate power supply if they draw significant current. Always connect the grounds together (Arduino GND and power source GND).
 
 ---
-### 2. Working on it simultaneously with the mechanical aspect  
+### 2. Connecting Arduino Mega with DC Motor Encoder and Servo Motor 
 [Wiring diagram](/schemes/test_1_wiring.fzz)
 
 ![wiring](test_1_wiring.png)
@@ -104,12 +116,7 @@ Note: Servo motors need a separate power supply if they draw significant current
 - VCC (Red) → External 5V–6V power source 
 - GND (Brown) → Common GND (Arduino GND + battery GND)
 
----
-**Power Connections**
-- DC Motor → Powered by external source (6V–12V) through L298N
-- Servo Motor → Separate regulated 5V–6V source (e.g., 2S LiPo with voltage regulator)
-- Arduino Mega → Powered via USB or VIN (7V–12V regulated input)
-
+## Power
 ## Mechanical methods
 ## Conclusion
 

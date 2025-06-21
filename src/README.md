@@ -3,16 +3,6 @@ This document aims to present all the software solutions we have developed—whe
 
 The system relies primarily on the Raspberry Pi 5, which functions as the "brain" of the robot. It is mainly responsible for analyzing and processing images captured by the camera, utilizing Computer Vision (CV) techniques, as well as Machine Learning (ML) and Artificial Intelligence (AI) to enable the robot to make intelligent decisions based on visual and environmental data.
 
-## Sensors and motors communication protocols
-The different communication protocols used between the components of the robot and their hierarchy:
-- Computer
-  - Raspberry Pi `SSH & VNC & micro-HDMI `
-    - Ardunio Maga `USB `
-      - DC Motor with endcoder `Interrupt`
-      - Motor driver `PWM` 2x`Digital`
-      - Servo `PWM`
-      - 3x VL53L0X Sensor `I2C` + `Digital Output (XSHUT)`
-  - Camera `CSI-2`
 
 ## Components and Connections Simulation
 We designed and modified these parts to match the needs of our WRO project, using Fritzing based on our specific requirements. The design process was guided by our strategy of fully simulating all components, connections, and code before implementation. Therefore, creating these parts was an essential step in our plan to ensure a smooth transition from theoretical design to practical application[Parts](https://github.com/sara-imad06/WRO-Designed-Components.git).
