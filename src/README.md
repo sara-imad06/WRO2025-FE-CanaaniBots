@@ -12,7 +12,7 @@ The different communication protocols used between the components of the robot a
       - Motor driver `PWM` 2x`Digital`
       - Servo `PWM`
       - 3x VL53L0X Sensor `I2C` + `Digital Output (XSHUT)`
-    - Camera `CSI-2`
+  - Camera `CSI-2`
 
 ## Components and Connections Simulation
 We designed and modified these parts to match the needs of our WRO project, using Fritzing based on our specific requirements. The design process was guided by our strategy of fully simulating all components, connections, and code before implementation. Therefore, creating these parts was an essential step in our plan to ensure a smooth transition from theoretical design to practical application[Parts](https://github.com/sara-imad06/WRO-Designed-Components.git).
