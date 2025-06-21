@@ -39,10 +39,9 @@ The different communication protocols used between the components of the robot a
 
 
 ## Design and 3D printing of parts
-All parts were specifically designed for the competition using SolidWorks  and printed on () printers using a slicer. The files were exported in .stl format for 3D printing, and the material used was (), You can view the designs of all parts in SLDASM and SLDPRT formats [here](/models/Solid_Works_3D_Drawings),we drilled and adjusted all the parts ourselves in the engineering workshops at the university.
+All parts were specifically designed for the competition using SolidWorks  and printed on () printers using a slicer. The files were exported in (.stl) format for 3D printing, and the material used was (), You can view the designs of all parts in SLDASM and SLDPRT formats [here](/models/Solid_Works_3D_Drawings) ,we drilled and adjusted all the parts ourselves in the engineering workshops at the university.
 
 ### 1. Stage one: Printing parts to verify the robot’s ability to move in a straight linear path without deviation.
-  
   In this stage, we designed two planned parts (Front pen holder & Rear pen holder) to hold two pens, aiming to verify the robot’s correct movement and to detect any deviation in the servo motor’s motion in order to program it accurately. The first part is fixed at the front of the robot, and the second at its end, precisely at the center, to measure the accuracy of the path and the amount of deviation.
 
   <img src="/models/stage_1.png" alt="pen holders" width="700">
