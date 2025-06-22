@@ -24,12 +24,7 @@ For the Raspberry Pi 5, the code was written in Python, which is the most suitab
 The [Arduino Integrated Development Environment](https://www.arduino.cc/en/software/)  was our choice to develop our first stage (testing code) files were in**file.ino** extinstion. In later stages we moved into VS code.
 
 ## Raspberry Pi 5
-
-<<<<<<< HEAD
-## Testing Codes 
-=======
-## Testing Code (Stage 1)
->>>>>>> 094bef8d18d694b5ff1c0fc43f50226ce0a673ff
+## Testing Code 
 At this stage, we developed an experimental code based on the basic wiring, with the main goal of testing all wheels, motors, and controllers. This stage was divided into three main parts:
 
 ### 1. Adjusting the servo motor angle
