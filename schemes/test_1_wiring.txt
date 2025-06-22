@@ -1,0 +1,39 @@
+L298N Motor Driver to Arduino Mega
+L298N Pin	Connect To
+OUT1	Red wire of the DC motor
+OUT2	White wire of the DC motor
+ENA	Pin 3 on Arduino Mega (PWM control)
+IN1	Pin 4 on Arduino Mega
+IN2	Pin 5 on Arduino Mega
+GND	GND (to Arduino GND and battery GND)
+12V	External power (6V–12V battery)
+5V	❌ Do NOT use (especially not for servo!)
+________________________________________
+ DC Motor Encoder 
+Encoder Wire	Connect To
+Green (A signal)	Arduino Mega Pin 18 (Interrupt)
+Yellow (B signal)	Arduino Mega Pin 19 (Interrupt)
+Blue (VCC)	Arduino 5V
+Black (GND)	Arduino GND
+________________________________________
+ Servo Motor to Arduino Mega
+Servo Wire	Connect To
+Signal (Orange)	Pin 9 on Arduino Mega
+VCC (Red)	⚠️ External 5V–6V power source (not Arduino)
+GND (Brown)	Common GND (Arduino GND + battery GND)
+Important: Don’t power the servo directly from the Arduino Mega — it doesn’t provide enough current. Use a battery pack or buck converter with shared ground.
+________________________________________
+ Power Connections
+•	DC Motor → Powered by external source (6V–12V) through L298N
+•	Servo Motor → Separate regulated 5V–6V source (e.g., 2S LiPo with voltage regulator)
+•	Arduino Mega → Powered via USB or VIN (7V–12V regulated input)
+________________________________________
+Pins Summary (Arduino Mega)
+Purpose	Pin
+DC Motor ENA (PWM)	Pin 3
+DC Motor IN1	Pin 4
+DC Motor IN2	Pin 5
+Servo Signal	Pin 9
+Encoder A	Pin 18 (optional)
+Encoder B	Pin 19 (optional)
+

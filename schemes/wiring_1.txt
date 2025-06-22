@@ -1,0 +1,20 @@
+DC Motor via L298N Module
+(Connected to pins 3, 4, and 5)
+L298N to Arduino Mega:
+•	IN1 → Pin 4 (controls motor direction)
+•	IN2 → Pin 5 (controls motor direction)
+•	ENA → Pin 3 (PWM pin, controls motor speed)
+L298N Power:
+•	OUT1 & OUT2 → Connect to DC motor wires
+•	12V / VCC → Connect to external power supply (6V–12V battery)
+•	GND → Connect to Arduino GND
+•	5V (if jumper is present) → Optional; powers logic (you can use it if your battery is strong enough)
+________________________________________
+ Servo Motor (Steering)
+(Connected to pin 9)
+ Servo Motor to Arduino Mega:
+•	Signal (usually orange or yellow) → Pin 9
+•	VCC (red) → External 5V–6V power source
+•	GND (brown/black) → Connect to common GND with Arduino
+ Servo motors need a separate power supply if they draw significant current. Always connect the grounds together (Arduino GND and power source GND).
+

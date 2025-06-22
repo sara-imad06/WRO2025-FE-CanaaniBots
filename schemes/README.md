@@ -1,8 +1,6 @@
 # Hardware documentation 
 The robot consists of a wide variety of sensors, motors, and two processing units: a Raspberry Pi 5 and an Arduino Mega. The base is built on a 4WD RC Smart Car Robot Chassis with ann MG996R metal servo and bearing kit, which has been heavily modified to suit our project's requirements. These modifications include custom 3D-printed parts, such as a dedicated camera mount and custom spacers, as well as the replacement of several original components to improve stability, wiring, and sensor integration. All engineering modifications are thoroughly documented and clearly illustrated in the guide provided below.
 
-
-
 ## List of components
 We installed a lot of sensors and other components on the car, here is a list of each of them with a link and some additional notes:
 - **Base car** [4WD RC Smart Car Robot Chassis](https://technolab.ps/detail/471)
@@ -114,6 +112,12 @@ Note: Servo motors need a separate power supply if they draw significant current
 - Signal (Orange) → Pin 9 on Arduino Mega
 - VCC (Red) → External 5V–6V power source 
 - GND (Brown) → Common GND (Arduino GND + battery GND)
+
+---
+**Power Connections**
+- DC Motor → Powered by external source (6V–12V) through L298N
+- Servo Motor → Separate regulated 5V–6V source (e.g., 2S LiPo with voltage regulator)
+- Arduino Mega → Powered via USB or VIN (7V–12V regulated input)
 
 ## Power
 ## Mechanical methods
