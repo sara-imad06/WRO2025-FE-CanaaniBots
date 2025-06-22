@@ -25,7 +25,11 @@ The [Arduino Integrated Development Environment](https://www.arduino.cc/en/softw
 
 ## Raspberry Pi 5
 
+<<<<<<< HEAD
 ## Testing Codes 
+=======
+## Testing Code (Stage 1)
+>>>>>>> 094bef8d18d694b5ff1c0fc43f50226ce0a673ff
 At this stage, we developed an experimental code based on the basic wiring, with the main goal of testing all wheels, motors, and controllers. This stage was divided into three main parts:
 
 ### 1. Adjusting the servo motor angle
