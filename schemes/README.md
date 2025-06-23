@@ -119,6 +119,41 @@ Note: Servo motors need a separate power supply if they draw significant current
 - Servo Motor → Separate regulated 5V–6V source (e.g., 2S LiPo with voltage regulator)
 - Arduino Mega → Powered via USB or VIN (7V–12V regulated input)
 
+### 3. Connecting 3x VL53L0X Sensors and red LED
+[Wiring diagram](/schemes/sensors_wiring.fzz)
+
+![wiring](sensors_wiring.png)
+
+#### Wiring details at this stage
+# VL53L0X Sensor and Component Wiring Guide
+**Left VL53L0X Sensor**
+- VIN → 5V
+- GND → GND
+- SDA → Arduino Mega Pin 20
+- SCL → Arduino Mega Pin 21
+- XSHUT → Arduino Mega Pin 6
+---
+**Front VL53L0X Sensor**
+- VIN → 5V
+- GND → GND
+- SDA → Arduino Mega Pin 20
+- SCL → Arduino Mega Pin 21
+- XSHUT → Arduino Mega Pin 7
+---
+**Right VL53L0X Sensor**
+- VIN → 5V
+- GND → GND
+- SDA → Arduino Mega Pin 20
+- SCL → Arduino Mega Pin 21
+- XSHUT → Arduino Mega Pin 8
+---
+important Notes: all VL53L0X sensors share the same 5V and GND rails.
+---
+**Red LED**
+- Anode (long leg) → Arduino Pin 10 (with a 220Ω resistor in series)
+- Cathode (short leg) → GND (common ground with Arduino)
+
+
 ## Power
 ## Mechanical methods
 ## Conclusion
