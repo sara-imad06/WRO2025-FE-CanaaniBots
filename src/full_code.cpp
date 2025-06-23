@@ -76,8 +76,7 @@ void setup() {
   Serial.println("Robot started.");
 }
 
-void loop() {
-  const unsigned long forwardDuration = 5000; // 5 sec straight forward
+
 
 void loop() {
   unsigned long currentMillis = millis();
@@ -117,5 +116,15 @@ void loop() {
     forwardStartTime = currentMillis;
   }
 
+  // Send distances to Python visualizer
+  Serial.print("D:");
+  Serial.print(distLeft);
+  Serial.print(",");
+  Serial.print(distFront);
+  Serial.print(",");
+  Serial.println(distRight);
+
   delay(100);
+
+
 }

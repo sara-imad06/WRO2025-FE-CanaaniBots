@@ -4,9 +4,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import random
+import serial
+import time
+
+# Open Serial connection (change COM3 فخ 4 خق 5)
+ser = serial.Serial('COM3', 9600)  # Replace 'COM3' with your Arduino port (e.g., 'COM4', '/dev/ttyUSB0')
+time.sleep(2)  # Wait for Arduino to reset
 
 
+# Function to read sensor distances from Arduino
+def read_sensor_data_from_arduino():
+    try:
+        line = ser.readline().decode('utf-8').strip()
+        if line.startswith("D:"):
+            parts = line[2:].split(',')
+            if len(parts) == 3:
+                return [float(x) for x in parts]
+    except:
+        return None
+    return None
+
+
+# Trilateration to estimate robot position
 def trilaterate(p1, r1, p2, r2, p3, r3):
     P1, P2, P3 = np.array(p1), np.array(p2), np.array(p3)
     Ex = (P2 - P1) / np.linalg.norm(P2 - P1)
@@ -23,10 +42,7 @@ def trilaterate(p1, r1, p2, r2, p3, r3):
     return position
 
 
-def read_distance_from_sensor(index):
-    return random.uniform(500, 2500)
-
-
+# GUI class
 class RobotGUI:
     def __init__(self, root):
         self.root = root
@@ -39,6 +55,7 @@ class RobotGUI:
 
         self.create_widgets()
         self.init_plot()
+        self.auto_update()  # Start live update every second
 
     def create_widgets(self):
         style = ttk.Style()
@@ -73,30 +90,32 @@ class RobotGUI:
         self.ax.set_aspect('equal')
         self.ax.grid(True, color='gray', linestyle='--', linewidth=0.5)
 
-        
+        # Draw reference points
         for i, (x, y) in enumerate(self.ref_points):
             self.ax.plot(x, y, 'ro', markersize=10)
             self.ax.text(x + 50, y - 50, f"Ref {i+1}", color='white', fontsize=10)
 
-        
+        # Draw blue forbidden zone (just for visual)
         self.ax.add_patch(Rectangle((1050, 1050), 900, 900, color='#0074e4', alpha=0.5))
-
-        
         self.ax.text(1500, 1500, "Future Engineers\n2025 - BZU", color='white', fontsize=10,
                      ha='center', va='center', weight='bold')
 
-        
+        # Plot robot position if known
         if self.robot_pos:
             self.ax.plot(self.robot_pos[0], self.robot_pos[1], 'o', markersize=18, color='white')
             self.ax.text(self.robot_pos[0] + 50, self.robot_pos[1] + 50, "Robot", color='white', fontsize=14, fontweight='bold')
 
-        
         self.ax.tick_params(axis='both', colors='white')
-
         self.canvas.draw()
 
     def start_system(self):
-        self.distances = [read_distance_from_sensor(i) for i in range(3)]
+        data = read_sensor_data_from_arduino()
+        if data:
+            self.distances = data
+        else:
+            messagebox.showerror("Error", "Could not read sensor data!")
+            return
+
         for i in range(3):
             self.entries[i].delete(0, tk.END)
             self.entries[i].insert(0, f"{self.distances[i]:.2f}")
@@ -113,17 +132,22 @@ class RobotGUI:
 
         self.init_plot()
 
-    def update_robot_position(self): # Running and taking inputs 
-        try:
-            r1 = float(self.entries[0].get())
-            r2 = float(self.entries[1].get())
-            r3 = float(self.entries[2].get())
-            self.robot_pos = trilaterate(self.ref_points[0], r1,
-                                         self.ref_points[1], r2,
-                                         self.ref_points[2], r3)
-            self.init_plot()
-        except Exception as e:
-            messagebox.showerror("Error", f"Failed to update robot position:\n{e}")
+    def update_robot_position(self):
+        data = read_sensor_data_from_arduino()
+        if data:
+            r1, r2, r3 = data
+        else:
+            messagebox.showerror("Error", "No sensor data received!")
+            return
+
+        self.robot_pos = trilaterate(self.ref_points[0], r1,
+                                     self.ref_points[1], r2,
+                                     self.ref_points[2], r3)
+        self.init_plot()
+
+    def auto_update(self):
+        self.update_robot_position()
+        self.root.after(1000, self.auto_update)  # update every 1 second
 
 
 if __name__ == "__main__":
