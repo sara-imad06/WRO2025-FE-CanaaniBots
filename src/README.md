@@ -14,6 +14,13 @@ We designed and modified these parts to match the needs of our WRO project, usin
 ## Programming computer & Code editor
 This can be either a laptop or a PC. We tested everything on a laptop running Windows 11.We used Visual Studio Code [VScode](https://code.visualstudio.com/download), we used several extinstions like :[Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Ardunio](https://marketplace.visualstudio.com/items?itemName=lintangwisesa.arduino),[Ardunio](https://marketplace.visualstudio.com/items?itemName=moozzyk.Arduino), [Java](https://marketplace.visualstudio.com/items?itemName=SonderMX.java-kits)
 
+You need to install Python on your device with a version that is compatible with your system. We also installed some specific Python libraries:
+`pip install pyserial`<br>
+`pip install numpy matplotlib`<br>
+
+
+
+
 ## Coding Langueges 
 At the beginning of the development process, we used Java during the testing phase to experiment with and verify individual code segments. Once we confirmed that each part was working correctly, we assembled the [full code]() in C++, incorporating some C-based syntax and functions, as it is faster and easier to work with when controlling the Arduino and its motors. 
 
@@ -30,6 +37,14 @@ At this stage, we developed an experimental code based on the basic wiring, with
 ### 1. Adjusting the servo motor angle
 During this process, the center angle was set to 90 degrees, with a deviation range of ±10 degrees  
 [Code](/src/servo_test_code.java)
+``` Java
+int centerAngle = 90;
+int maxDeviation = 10; 
+
+ void turn(int degreesFromCenter) {
+    degreesFromCenter = constrain(degreesFromCenter, -maxDeviation, maxDeviation);
+    servo.write(centerAngle + degreesFromCenter);
+```
 
 #### Classes  
 `DCMotor`  
