@@ -1,62 +1,121 @@
 #include <Servo.h>
 #include <Arduino.h>
+#include <VL53L0X.h>
 
 // Motor driver pins
-const int ENA = 3;     // PWM for motor speed
-const int IN1 = 4;     // Motor direction
+const int ENA = 3;    
+const int IN1 = 4;     
 const int IN2 = 5;
 
 // Servo pin
 const int servoPin = 6;
 Servo steeringServo;
 
+const int ledPin = 10;
+
+
+VL53L0X sensorFront, sensorLeft, sensorRight;
+const int XSHUT_LEFT = 6;
+const int XSHUT_FRONT = 7;
+const int XSHUT_RIGHT = 8;
+
 int servoAngle = 90;   // Initial angle (center)
 unsigned long lastTurnTime = 0;
 int turnState = 0;
 
+void setupSensors() {
+  pinMode(XSHUT_LEFT, OUTPUT);
+  pinMode(XSHUT_FRONT, OUTPUT);
+  pinMode(XSHUT_RIGHT, OUTPUT);
+  digitalWrite(XSHUT_LEFT, LOW);
+  digitalWrite(XSHUT_FRONT, LOW);
+  digitalWrite(XSHUT_RIGHT, LOW);
+  delay(10);
+
+  digitalWrite(XSHUT_LEFT, HIGH);
+  delay(10);
+  sensorLeft.init(true);
+  sensorLeft.setAddress(0x30);
+
+  digitalWrite(XSHUT_FRONT, HIGH);
+  delay(10);
+  sensorFront.init(true);
+  sensorFront.setAddress(0x31);
+
+  digitalWrite(XSHUT_RIGHT, HIGH);
+  delay(10);
+  sensorRight.init(true);
+  sensorRight.setAddress(0x32);
+
+  sensorLeft.startContinuous();
+  sensorFront.startContinuous();
+  sensorRight.startContinuous();
+}
+
+
 void setup() {
-  // Set motor control pins as outputs
+  
   pinMode(ENA, OUTPUT);
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
 
-  // Move motor forward
+  // move motor forward
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
-  analogWrite(ENA, 120);  // Speed: range 0-255
-
-  // Setup servo
+  analogWrite(ENA, 120);  // speed(range 0-255)
+  
   steeringServo.attach(servoPin);
-  steeringServo.write(servoAngle); // Center position
+  steeringServo.write(servoAngle); // senter position
+
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
 
   Serial.begin(9600);
+  Wire.begin();
+  setupSensors();
   Serial.println("Robot started.");
 }
 
 void loop() {
+  const unsigned long forwardDuration = 5000; // 5 sec straight forward
+
+void loop() {
   unsigned long currentMillis = millis();
 
-  // Change servo direction every 5 seconds
-  if (currentMillis - lastTurnTime >= 5000) {
-    lastTurnTime = currentMillis;
+  // Sensors distances
+  int distLeft = sensorLeft.readRangeContinuousMillimeters();
+  int distFront = sensorFront.readRangeContinuousMillimeters();
+  int distRight = sensorRight.readRangeContinuousMillimeters();
 
-    if (turnState == 0) {
-      servoAngle = 70;    // Turn left
-      Serial.println("Turning Left");
-    } else if (turnState == 1) {
-      servoAngle = 90;    // Center
-      Serial.println("Centering");
-    } else {
-      servoAngle = 110;   // Turn right
-      Serial.println("Turning Right");
-    }
+  Serial.print("L: "); Serial.print(distLeft);
+  Serial.print(" F: "); Serial.print(distFront);
+  Serial.print(" R: "); Serial.println(distRight);
 
-    steeringServo.write(servoAngle);
-    turnState = (turnState + 1) % 3;
 
-    Serial.print("Turn state: ");
-    Serial.println(turnState);
+  bool tooClose = (distFront < 150 || distLeft < 150 || distRight < 150);
+  digitalWrite(ledPin, tooClose ? HIGH : LOW);
+
+
+  if (distFront < 150) {  //front 
+    servoAngle = 110; 
+  } else if (distRight < 100) {  //right
+    servoAngle = 70;  
+  } else if (distLeft < 100) { //left
+    servoAngle = 110; 
+  } else {
+    servoAngle = 90; 
   }
 
-  // The motor continues to move forward constantly
+  steeringServo.write(servoAngle);
+
+  // turnnig every 5 seconds (right)
+  if (currentMillis - forwardStartTime >= forwardDuration) {
+    Serial.println("Turning right to follow square path...");
+    steeringServo.write(110);  // turn right
+    delay(600);                // turn duration
+    steeringServo.write(90);   // back to center
+    forwardStartTime = currentMillis;
+  }
+
+  delay(100);
 }
