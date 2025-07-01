@@ -36,17 +36,23 @@ The different communication protocols used between the components of the robot a
   - Camera `CSI-2`
 
 
-## Design and 3D printing of parts
+## Design and 3D Printing Of Parts and Assembly Instructions
 All parts were specifically designed for the competition using SolidWorks  and printed on () printers using a slicer. The files were exported in (.stl) format for 3D printing, and the material used was (), You can view the designs of all parts in SLDASM and SLDPRT formats [here](/models/Solid_Works_3D_Drawings) ,we drilled and adjusted all the parts ourselves in the engineering workshops at the university.
 
 ### 1. Stage one: Printing parts to verify the robot’s ability to move in a straight linear path without deviation.
   In this stage, we designed two planned parts (Front pen holder & Rear pen holder) to hold two pens, aiming to verify the robot’s correct movement and to detect any deviation in the servo motor’s motion in order to program it accurately. The first part is fixed at the front of the robot, and the second at its end, precisely at the center, to measure the accuracy of the path and the amount of deviation.
-
+  <img src="/models/Workshop 2.png" alt="workshop" width="700">
+  After printing the holder, we took it to the engineering workshops at the university for drilling and making some necessary modifications
   <img src="/models/stage_1.png" alt="pen holders" width="700">
   
 ### 2. Stage two: Designing a movable battery holder (slider)
-
+  It is a retractable drawer mechanism engineered to securely house the batteries and their dedicated charging cradle. The design ensures ease of access for battery replacement and maintenance, while maintaining structural integrity and efficient use of internal space.
   <img src="/models/Slider.jpg" alt="Slider" width="700">
+  The slider was modified in the workshop by filing it down and shortening certain parts to precisely match our intended specifications.
+  <img src="/models/slider_workshop.jpg" alt="Slider" width="700">
+
+
+
 
 ### 3. Stage three:
 
@@ -125,7 +131,6 @@ Note: Servo motors need a separate power supply if they draw significant current
 ![wiring](sensors_wiring.png)
 
 #### Wiring details at this stage
-# VL53L0X Sensor and Component Wiring Guide
 **Left VL53L0X Sensor**
 - VIN → 5V
 - GND → GND
@@ -147,8 +152,6 @@ Note: Servo motors need a separate power supply if they draw significant current
 - SCL → Arduino Mega Pin 21
 - XSHUT → Arduino Mega Pin 8
 ---
-important Notes: all VL53L0X sensors share the same 5V and GND rails.
----
 **Red LED**
 - Anode (long leg) → Arduino Pin 10 (with a 220Ω resistor in series)
 - Cathode (short leg) → GND (common ground with Arduino)
@@ -156,6 +159,7 @@ important Notes: all VL53L0X sensors share the same 5V and GND rails.
 
 ## Power
 ## Mechanical methods
+workshop details will be here
 ## Conclusion
 
 

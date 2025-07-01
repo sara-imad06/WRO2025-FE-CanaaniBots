@@ -4,28 +4,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import serial
+import random
 import time
 
-# Serial setup
-ser = serial.Serial('COM3', 9600)
-time.sleep(2)
-
-
-# Read distances from Arduino
+# Simulated sensor data
 def read_sensor_data_from_arduino():
-    try:
-        line = ser.readline().decode('utf-8').strip()
-        if line.startswith("D:"):
-            parts = line[2:].split(',')
-            if len(parts) == 3:
-                return [float(x) for x in parts]
-    except:
-        return None
-    return None
+    return [
+        random.uniform(800, 2000),
+        random.uniform(800, 2000),
+        random.uniform(800, 2000)
+    ]
 
-
-# Estimate robot position
+# Trilateration to get robot position
 def trilaterate(p1, r1, p2, r2, p3, r3):
     P1, P2, P3 = np.array(p1), np.array(p2), np.array(p3)
     Ex = (P2 - P1) / np.linalg.norm(P2 - P1)
@@ -37,7 +27,6 @@ def trilaterate(p1, r1, p2, r2, p3, r3):
     x = (r1**2 - r2**2 + d**2) / (2 * d)
     y = (r1**2 - r3**2 + i**2 + j**2 - 2 * i * x) / (2 * j)
     return P1 + x * Ex + y * Ey
-
 
 # Main GUI class
 class RobotGUI:
@@ -99,14 +88,12 @@ class RobotGUI:
         with open("logs.txt", "a") as file:
             file.write(f"[{timestamp}] {level}: {message}\n")
 
-    # Clear logs
     def clear_logs(self):
         self.log_text.delete(1.0, tk.END)
         with open("logs.txt", "w") as f:
             f.write("")
         self.log("Logs cleared.", "INFO")
 
-    # Reset all
     def reset_all(self):
         self.robot_pos = None
         self.history.clear()
@@ -117,7 +104,7 @@ class RobotGUI:
         self.init_plot()
         self.log("System reset.", "INFO")
 
-    # Draw everything
+    # Plotting
     def init_plot(self):
         self.ax.clear()
         self.ax.set_title("Cannani Bots (Robot Visualizer)", color='white', fontsize=14)
@@ -139,14 +126,14 @@ class RobotGUI:
             xs, ys = zip(*self.history)
             self.ax.plot(xs, ys, linestyle='-', color='cyan', linewidth=2, alpha=0.7)
 
-        if self.robot_pos:
+        if self.robot_pos is not None:
             self.ax.plot(self.robot_pos[0], self.robot_pos[1], 'o', markersize=18, color='white')
             self.ax.text(self.robot_pos[0] + 50, self.robot_pos[1] + 50, "Robot", color='white', fontsize=14, fontweight='bold')
 
         self.ax.tick_params(axis='both', colors='white')
         self.canvas.draw()
 
-    # Start button
+    # First reading
     def start_system(self):
         self.log("Starting system...", "INFO")
         data = read_sensor_data_from_arduino()
@@ -178,7 +165,7 @@ class RobotGUI:
 
         self.init_plot()
 
-    # Update robot live
+    # Auto updates
     def update_robot_position(self):
         data = read_sensor_data_from_arduino()
         if data:
@@ -210,12 +197,12 @@ class RobotGUI:
             self.log(f"Playback: Step {self.playback_index + 1}/{len(self.history)}", "INFO")
             self.init_plot()
 
-    # Auto update every second
+    # Auto timer
     def auto_update(self):
         self.update_robot_position()
         self.root.after(1000, self.auto_update)
 
-    # Save path as image
+    # Save image
     def save_path_as_image(self):
         fig, ax = plt.subplots(figsize=(6, 6), facecolor='#1a1a2e')
         ax.set_xlim(0, 3000)
@@ -246,8 +233,7 @@ class RobotGUI:
         plt.close(fig)
         self.log("Path image saved as 'robot_path.png'", "INFO")
 
-
-# Run program
+# Run app
 if __name__ == "__main__":
     root = tk.Tk()
     app = RobotGUI(root)
