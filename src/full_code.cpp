@@ -1,32 +1,34 @@
 #include <Servo.h>
-#include <Arduino.h>
+#include <Wire.h>
 #include <VL53L0X.h>
 
-// Motor driver pins
-const int ENA = 3;    
-const int IN1 = 4;     
+const int ENA = 3;
+const int IN1 = 4;
 const int IN2 = 5;
 
-// Servo pin
-const int servoPin = 6;
+const int servoPin = 9;
 Servo steeringServo;
 
+// LED 
 const int ledPin = 10;
 
-
+// VL53L0X
 VL53L0X sensorFront, sensorLeft, sensorRight;
 const int XSHUT_LEFT = 6;
 const int XSHUT_FRONT = 7;
 const int XSHUT_RIGHT = 8;
 
-int servoAngle = 90;   // Initial angle (center)
-unsigned long lastTurnTime = 0;
-int turnState = 0;
+
+int servoAngle = 90;
+
+int normalSpeed = 255;  // med speed
+int slowSpeed   = 100;  // high speed
 
 void setupSensors() {
   pinMode(XSHUT_LEFT, OUTPUT);
   pinMode(XSHUT_FRONT, OUTPUT);
   pinMode(XSHUT_RIGHT, OUTPUT);
+
   digitalWrite(XSHUT_LEFT, LOW);
   digitalWrite(XSHUT_FRONT, LOW);
   digitalWrite(XSHUT_RIGHT, LOW);
@@ -52,37 +54,28 @@ void setupSensors() {
   sensorRight.startContinuous();
 }
 
-
 void setup() {
-  
   pinMode(ENA, OUTPUT);
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
 
-  // move motor forward
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
-  analogWrite(ENA, 120);  // speed(range 0-255)
-  
-  steeringServo.attach(servoPin);
-  steeringServo.write(servoAngle); // senter position
-
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, LOW);
+
+  steeringServo.attach(servoPin);
+  steeringServo.write(servoAngle);
 
   Serial.begin(9600);
   Wire.begin();
   setupSensors();
-  Serial.println("Robot started.");
+
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  analogWrite(ENA, normalSpeed);
 }
 
-
-
 void loop() {
-  unsigned long currentMillis = millis();
-
-  // Sensors distances
-  int distLeft = sensorLeft.readRangeContinuousMillimeters();
+  int distLeft  = sensorLeft.readRangeContinuousMillimeters();
   int distFront = sensorFront.readRangeContinuousMillimeters();
   int distRight = sensorRight.readRangeContinuousMillimeters();
 
@@ -90,41 +83,27 @@ void loop() {
   Serial.print(" F: "); Serial.print(distFront);
   Serial.print(" R: "); Serial.println(distRight);
 
+  // detact wall
+  bool obstacle = (distFront < 150 || distLeft < 100 || distRight < 100);
 
-  bool tooClose = (distFront < 150 || distLeft < 150 || distRight < 150);
-  digitalWrite(ledPin, tooClose ? HIGH : LOW);
+  if (obstacle) {
+    analogWrite(ENA, slowSpeed);
+    digitalWrite(ledPin, HIGH);
 
-
-  if (distFront < 150) {  //front 
-    servoAngle = 110; 
-  } else if (distRight < 100) {  //right
-    servoAngle = 70;  
-  } else if (distLeft < 100) { //left
-    servoAngle = 110; 
+    if (distFront < 150) {
+      servoAngle = 110; // 
+    } else if (distRight < 100) {
+      servoAngle = 70;  // left
+    } else if (distLeft < 100) {
+      servoAngle = 110; // right
+    }
   } else {
-    servoAngle = 90; 
+    analogWrite(ENA, normalSpeed);
+    digitalWrite(ledPin, LOW);
+    servoAngle = 90;
   }
 
   steeringServo.write(servoAngle);
 
-  // turnnig every 5 seconds (right)
-  if (currentMillis - forwardStartTime >= forwardDuration) {
-    Serial.println("Turning right to follow square path...");
-    steeringServo.write(110);  // turn right
-    delay(600);                // turn duration
-    steeringServo.write(90);   // back to center
-    forwardStartTime = currentMillis;
-  }
-
-  // Send distances to Python visualizer
-  Serial.print("D:");
-  Serial.print(distLeft);
-  Serial.print(",");
-  Serial.print(distFront);
-  Serial.print(",");
-  Serial.println(distRight);
-
-  delay(100);
-
-
+  delay(10); 
 }
