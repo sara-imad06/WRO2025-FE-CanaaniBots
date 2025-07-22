@@ -19,10 +19,12 @@ We installed a lot of sensors and other components on the car, here is a list of
 - **Lithium Battery Charger Module**
   - Maximum current can be 5A , Output voltage 5V
 - **Power switch** [SPST](https://roboticx.ps/product/rocker-switch-on-off-spst/)
--  **Laser sensor x3** [VL53L0XV2 Laser](https://roboticx.ps/product/vl53l0xv2-laser-ranging-sensor-time-of-flight-tof/)
+- **Laser sensor x3** [VL53L0XV2 Laser](https://roboticx.ps/product/vl53l0xv2-laser-ranging-sensor-time-of-flight-tof/)
   - Dimensions 25 x 10 x 4 mm, 50mm – 1.2m range (default mode), 50mm – 2.2m range (long range mode), frequency 5-33 Hz, accuracy ±2cm ,3.3V
 - **Camera** [Raspberry Pi Camera Module V2](https://roboticx.ps/product/raspberry-pi-camera-module/?asp_highlight=raspberry&p_asid=3)
   - No built-in color detection algorithm, field of View: 62.2° horizontal 48.8° vertical, up to 90 fps
+- **IMU** [GY-BN008X](https://technolab.ps/products?search=bno)
+  - Inertial Measurement Unit (IMU) BNO085 – operates at 3.3V with a gyro drift of about 0.5°/min and a dynamic rotation error of approximately 4.5°
 
 ## Sensors and motors communication protocols
 The different communication protocols used between the components of the robot and their hierarchy:
@@ -37,24 +39,37 @@ The different communication protocols used between the components of the robot a
 
 
 ## Design and 3D Printing Of Parts and Assembly Instructions
-All parts were specifically designed for the competition using SolidWorks  and printed on () printers using a slicer. The files were exported in (.stl) format for 3D printing, and the material used was (), You can view the designs of all parts in SLDASM and SLDPRT formats [here](/models/Solid_Works_3D_Drawings) ,we drilled and adjusted all the parts ourselves in the engineering workshops at the university.
+All parts were specifically designed for the competition using SolidWorks and printed on Qidi i-Fast, Flsun V400, and Flashforge Adventurer 4 Pro printers using a slicer. The files were exported in (.stl) format for 3D printing, and the material used was PLA, The Flashforge Adventurer 4 Pro was mainly used for testing parts, as its print quality was not sufficient for final components. Once the designs were confirmed through testing, the Qidi i-Fast and Flsun V400 were used to print the final parts due to their higher speed and accuracy. You can view the designs of all parts in SLDASM and SLDPRT formats [here](/models/Solid_Works_3D_Drawings),we drilled and adjusted all the parts ourselves in the engineering workshops at the university.
 
-### 1. Stage one: Printing parts to verify the robot’s ability to move in a straight linear path without deviation.
-  In this stage, we designed two planned parts (Front pen holder & Rear pen holder) to hold two pens, aiming to verify the robot’s correct movement and to detect any deviation in the servo motor’s motion in order to program it accurately. The first part is fixed at the front of the robot, and the second at its end, precisely at the center, to measure the accuracy of the path and the amount of deviation.
-  <img src="/models/Workshop 2.png" alt="workshop" width="700">
-  After printing the holder, we took it to the engineering workshops at the university for drilling and making some necessary modifications
-  <img src="/models/stage_1.png" alt="pen holders" width="700">
+### 1. Level one: Initial Kit-Based Structure and Custom Stage Planning
+We started the mechanical build using individual parts from a kit, which included a steering system, a servo motor, and a DC motor. These components were assembled to create a basic driving platform suitable for the project’s initial requirements. Only the first stage of the kit was used, as it provided the base needed for steering and driving tests. The second stage was excluded. 
+
+After initial assembly and testing, we decided to design a complete custom robot structure that better fit the competition dimensions and the hardware requirements. The first concept design was sketched directly on a photo of the assembled parts to visualize the planned structure. The design features a three-stage stacked layout, with all stages planned for 3D printing and optimized for height and component placement.
+
+The first stage, reused from the kit, holds the servo motor and steering system at the front and the DC motor at the rear. The battery pack was placed in the center of this stage to keep the center of mass low, which improves traction between the wheels and the mat and increases stability during movement. This decision was based on advice from our coach, who recommended placing heavier components closer to the ground.
+
+The second stage is designed to hold the Arduino Mega, the motor driver, and three distance sensors — one at the front, one on the left, and one on the right. The sketch originally labeled these as ultrasonic sensors, but they were later replaced with laser sensors after design finalization. This stage also includes space for organized cable routing and clean sensor alignment.
+
+The third stage is reserved for the Raspberry Pi, which was placed at the top of the robot due to its higher heat output compared to the other components. Positioning it on the upper stage improves passive cooling. The design also includes a camera mount fixed to the front of the first stage, providing a stable and forward-facing view for image capture.
+<img src="/models/slider_workshop.jpg" alt="Slider" width="700">
+
   
-### 2. Stage two: Designing a movable battery holder (slider)
-  It is a retractable drawer mechanism engineered to securely house the batteries and their dedicated charging cradle. The design ensures ease of access for battery replacement and maintenance, while maintaining structural integrity and efficient use of internal space.
-  <img src="/models/Slider.jpg" alt="Slider" width="700">
-  The slider was modified in the workshop by filing it down and shortening certain parts to precisely match our intended specifications.
-  <img src="/models/slider_workshop.jpg" alt="Slider" width="700">
+### 2. Level two: Mechanical Calibration for Straight-Line Stability
+At this stage, the focus shifted to calibrating the robot’s mechanical movement to ensure it drives in a perfectly straight line without deviation. To achieve this, we designed and manufactured a set of calibration tools consisting of pen holders, created using SolidWorks and printed in PLA using 3D printers. These holders were mounted at the front and rear of the robot chassis and used as a simple tool to verify mechanical alignment.
+
+Each holder includes a vertical opening designed to securely hold a pen. When the robot is placed on a flat surface and moves forward, both pens draw lines. The goal is for the two lines to perfectly overlap, which confirms that the robot is moving in a straight line. If there is any separation or misalignment between the lines, it indicates a deviation in the robot’s path. In such cases, we measured the offset and documented it, allowing us to later apply software-based corrections without the need for mechanical redesign.
+
+During testing, we encountered an issue where the pen openings were too tight, preventing the pens from fitting properly. To solve this, we manually widened the holes using drilling tools in the university’s engineering workshops. This adjustment ensured the pens fit correctly and that the calibration tool functioned reliably, producing consistent and accurate results.
 
 
 
 
-### 3. Stage three:
+
+### 3. Level three:
+
+### 4. Level four: 
+
+### 5. Level five:
 
 
 ## Assembly
@@ -161,23 +176,3 @@ Note: Servo motors need a separate power supply if they draw significant current
 ## Mechanical methods
 workshop details will be here
 ## Conclusion
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
