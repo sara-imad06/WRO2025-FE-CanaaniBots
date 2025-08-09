@@ -8,7 +8,7 @@ We installed a lot of sensors and other components on the car, here is a list of
 - **Steering servo** [MG996R Metal Servo Bearing Kit](https://technolab.ps/detail/471)
 - **DC motor** [DC Gear Motor with Encoder](https://roboticx.ps/product/dc-gear-motor-with-encoder/)
   -  Operating voltage 6V, torque 10 kg*cm max power 3.2A, 210 RPM, 341.2 pulse-per-revolution encoder
-- **Single Board Computer** [Raspberry Pi 5 8GB](https://roboticx.ps/product/raspberry-pi-5/?asp_highlight=raspberry&p_asid=3)
+- **Single Board Computer** [Raspberry Pi 5 4GB](https://roboticx.ps/product/raspberry-pi-5/?asp_highlight=raspberry&p_asid=3)
   - Operating voltage 5V/5A USB-C, 4 USB ports, 40 pins
 - **Microcontroller Arduino Mega 2560** [arduino](https://roboticx.ps/product/arduino-mega-2560-r3-china/)
   - Operating voltage 7-12V, 54 Digital I/O Pins (14 PWM outputs)- 16 Analog Inputs, dimensions: 101.5 x 53.3 mm
