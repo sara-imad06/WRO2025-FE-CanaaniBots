@@ -8,7 +8,7 @@
 ### [Vehicle Photos](/v-photos/)
 
 
-## The team
+## The team yy
 From Palestine, we are CanaaniBots — a team of three passionate young engineers and a supportive coach. After a year of competing together in WRO, trying out categories like Innovators and Future Engineers. This year, we're thrilled to return to the Future Engineers challenge once again!
 
 
